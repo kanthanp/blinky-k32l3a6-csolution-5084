@@ -17,7 +17,12 @@ solution:
   target-types:
     - type: FRDM-K32L3A6
       # board:FRDM-K32L3A6
-      device: K32L3A60VPJ1A:cm4
+      device: NXP::K32L3A60VPJ1A:cm4
+      defines:
+        - SDK_DEBUGCONSOLE=1
+      misc:
+        - Link:
+          - '--diag_suppress 6314'
 
   build-types:
     - type: Debug
