@@ -3,28 +3,16 @@
 project:
   groups:
     - group: Documentation
-      files: 
+      files:
         - file: ./README.md
     - group: Application
       files:
         - file: ./Blinky.c
 
   layers:
-    - layer: ./Board/AVH_MPS2_Cortex-M7/Board.clayer.yml
-      for-type: 
-        - +AVH_MPS2_Cortex-M7
-    - layer: ./Board/AVH_MPS3_Corstone-300/Board.clayer.yml
-      for-type: 
-        - +AVH_MPS3_Corstone-300
-    - layer: ./Board/IMXRT1050-EVKB/Board.clayer.yml
-      for-type: 
-        - +IMXRT1050-EVKB
     - layer: ./Board/FRDM-K32L3A6/Board.clayer.yml
-      for-type: 
+      for-type:
         - +FRDM-K32L3A6
-    - layer: ./Board/B-L475E-IOT01A/Board.clayer.yml
-      for-type: 
-        - +B-L475E-IOT01A
 
     # - layer: ./RTOS/FreeRTOS/RTOS.clayer.yml
     - layer: ./RTOS/RTX/RTOS.clayer.yml
