@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "intellisense",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "compileCommands": "${workspaceFolder}/out/Blinky/FRDM-K32L3A6/Debug/compile_commands.json"
+        }
+    ],
+    "version": 4
+}
