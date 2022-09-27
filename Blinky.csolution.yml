@@ -31,10 +31,12 @@ solution:
         - C*:
           - -O1
           - -g
+          - -gdwarf-4
         - C:
           - -std=c99
         - ASM:
           - -masm=auto
+          - -gdwarf-4
         - Link:
           - --entry=Reset_Handler
     - type: Release
