@@ -9,18 +9,11 @@
             "type": "embedded-debug",
             "request": "launch",
             "serialNumber": "${command:device-manager.getSerialNumber}",
-            "program": "${command:cmsis-csolution.getBinaryFile}",
+            "program": "${workspaceFolder}/out/Blinky/FRDM-K32L3A6/Debug/Blinky.Debug+FRDM-K32L3A6.axf",
             "cmsisPack": "${workspaceFolder}/NXP.K32L3A60_DFP.15.0.0.pack",
-            "debugFrom": "main"
-        },
-        {
-            "name": "Embedded flash",
-            "type": "embedded-flash",
-            "request": "launch",
-            "serialNumber": "${command:device-manager.getSerialNumber}",
-            "program": "${command:cmsis-csolution.getBinaryFile}",
-            "cmsisPack": "${workspaceFolder}/NXP.K32L3A60_DFP.15.0.0.pack",
-            "deviceName": "K32L3A60VPJ1A"
+            "processorName": "cm4",
+            "debugFrom": "main",
+            "preLaunchTask": "embedded-debug.flash: Flash Device"
         }
     ]
 }
