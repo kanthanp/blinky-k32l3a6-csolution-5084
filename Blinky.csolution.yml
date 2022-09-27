@@ -28,17 +28,16 @@ solution:
     - type: Debug
       compiler: AC6
       misc:
-        - C*:
-          - -O1
-          - -g
-          - -gdwarf-4
         - C:
+          - -O1
+          - -gdwarf-4
           - -std=c99
         - ASM:
           - -masm=auto
           - -gdwarf-4
         - Link:
           - --entry=Reset_Handler
+          - --symbols
     - type: Release
       compiler: AC6
       misc:
