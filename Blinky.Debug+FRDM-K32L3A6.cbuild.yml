@@ -40,7 +40,6 @@ build:
     - RTE/_Blinky.Debug_FRDM-K32L3A6
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Core/Include
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Driver/Include
-    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Driver/VIO/Include
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/Include
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Include
     - ${CMSIS_PACK_ROOT}/Keil/ARM_Compiler/1.7.2/Include
@@ -63,17 +62,14 @@ build:
     - component: ARM::CMSIS Driver:SPI:Custom@1.0.0
       from-pack: ARM::CMSIS@5.9.0
       selected-by: ARM::CMSIS Driver:SPI:Custom
-    - component: ARM::CMSIS Driver:VIO:Custom@1.0.0
-      from-pack: ARM::CMSIS@5.9.0
-      selected-by: ARM::CMSIS Driver:VIO:Custom
     - component: ARM::CMSIS:CORE@5.6.0
       condition: ARMv6_7_8-M Device
       from-pack: ARM::CMSIS@5.9.0
-      selected-by: ARM::CMSIS:CORE
+      selected-by: ARM::CMSIS:CORE@5.6.0
     - component: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.5.4
       condition: RTOS2 RTX5
       from-pack: ARM::CMSIS@5.9.0
-      selected-by: ARM::CMSIS:RTOS2:Keil RTX5&Source
+      selected-by: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.5.4
       files:
         - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/GCC/irq_armv7m.S
           category: source
@@ -116,7 +112,7 @@ build:
     - component: Keil::Compiler&ARM Compiler:Event Recorder&DAP@1.5.1
       condition: Cortex-M Device
       from-pack: Keil::ARM_Compiler@1.7.2
-      selected-by: Keil::Compiler&ARM Compiler:Event Recorder&DAP
+      selected-by: Keil::Compiler&ARM Compiler:Event Recorder&DAP@1.5.1
       files:
         - file: ${CMSIS_PACK_ROOT}/Keil/ARM_Compiler/1.7.2/Source/EventRecorder.c
           category: source
@@ -127,22 +123,22 @@ build:
     - component: Keil::Compiler&ARM Compiler:I/O:STDERR&User@1.2.0
       condition: ARMCC Cortex-M
       from-pack: Keil::ARM_Compiler@1.7.2
-      selected-by: Keil::Compiler&ARM Compiler:I/O:STDERR&User
+      selected-by: Keil::Compiler&ARM Compiler:I/O:STDERR&User@1.2.0
     - component: Keil::Compiler&ARM Compiler:I/O:STDIN&User@1.2.0
       condition: ARMCC Cortex-M
       from-pack: Keil::ARM_Compiler@1.7.2
-      selected-by: Keil::Compiler&ARM Compiler:I/O:STDIN&User
+      selected-by: Keil::Compiler&ARM Compiler:I/O:STDIN&User@1.2.0
     - component: Keil::Compiler&ARM Compiler:I/O:STDOUT&User@1.2.0
       condition: ARMCC Cortex-M
       from-pack: Keil::ARM_Compiler@1.7.2
-      selected-by: Keil::Compiler&ARM Compiler:I/O:STDOUT&User
+      selected-by: Keil::Compiler&ARM Compiler:I/O:STDOUT&User@1.2.0
       files:
         - file: ${CMSIS_PACK_ROOT}/Keil/ARM_Compiler/1.7.2/Source/retarget_io.c
           category: source
     - component: NXP::Board Support:SDK Project Template:project_template&frdmk32l3a6@1.0.0
       condition: device.K32L3A60_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.K32L3A60_startup_AND_driver.common_AND_driver.gpio_AND_driver.lpi2c_AND_driver.lpuart_AND_driver.msmc_AND_driver.port
       from-pack: NXP::FRDM-K32L3A6_BSP@13.0.0
-      selected-by: NXP::Board Support:SDK Project Template:project_template&frdmk32l3a6
+      selected-by: NXP::Board Support:SDK Project Template:project_template&frdmk32l3a6@1.0.0
       files:
         - file: RTE/Board_Support/K32L3A60VPJ1A_cm4/board.c
           category: sourceC
@@ -186,106 +182,106 @@ build:
     - component: NXP::Device:CMSIS:K32L3A60_header@1.0.0
       condition: device.K32L3A60_AND_CMSIS_Include_core_cm0plus_OR_CMSIS_Include_core_cm4
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:CMSIS:K32L3A60_header
+      selected-by: NXP::Device:CMSIS:K32L3A60_header@1.0.0
     - component: NXP::Device:CMSIS:K32L3A60_system@1.0.0
       condition: device.K32L3A60_AND_device.K32L3A60_CMSIS
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:CMSIS:K32L3A60_system
+      selected-by: NXP::Device:CMSIS:K32L3A60_system@1.0.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/system_K32L3A60_cm4.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:clock@2.2.1
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:clock
+      selected-by: NXP::Device:SDK Drivers:clock@2.2.1
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_clock.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:common@2.2.9
       condition: device.K32L3A60_AND_device.K32L3A60_CMSIS_AND_driver.clock
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:common
+      selected-by: NXP::Device:SDK Drivers:common@2.2.9
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_common.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:dmamux@2.0.5
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:dmamux
+      selected-by: NXP::Device:SDK Drivers:dmamux@2.0.5
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_dmamux.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:edma@2.4.1
       condition: device.K32L3A60_AND_driver.common_AND_driver.dmamux
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:edma
+      selected-by: NXP::Device:SDK Drivers:edma@2.4.1
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_edma.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:fxos8700cq@1.0.0
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:fxos8700cq
+      selected-by: NXP::Device:SDK Drivers:fxos8700cq@1.0.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/components/fxos8700cq/fsl_fxos.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:gpio@2.5.1
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:gpio
+      selected-by: NXP::Device:SDK Drivers:gpio@2.5.1
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_gpio.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:i2c@2.2.0
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:i2c
+      selected-by: NXP::Device:SDK Drivers:i2c@2.2.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_lpi2c.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:lists@1.0.0
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:lists
+      selected-by: NXP::Device:SDK Drivers:lists@1.0.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/components/lists/fsl_component_generic_list.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:lpspi@2.1.0
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:lpspi
+      selected-by: NXP::Device:SDK Drivers:lpspi@2.1.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_lpspi.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:lpuart@2.4.1
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:lpuart
+      selected-by: NXP::Device:SDK Drivers:lpuart@2.4.1
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_lpuart.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:lpuart_adapter@1.0.0
       condition: device.K32L3A60_AND_driver.common_AND_driver.lpuart
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:lpuart_adapter
+      selected-by: NXP::Device:SDK Drivers:lpuart_adapter@1.0.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/components/uart/fsl_adapter_lpuart.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:msmc@2.1.2
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:msmc
+      selected-by: NXP::Device:SDK Drivers:msmc@2.1.2
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/drivers/fsl_msmc.c
           category: sourceC
     - component: NXP::Device:SDK Drivers:port@2.1.1
       condition: device.K32L3A60_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Drivers:port
+      selected-by: NXP::Device:SDK Drivers:port@2.1.1
     - component: NXP::Device:SDK Project Template:RTE_Device@1.0.0
       condition: device.K32L3A60_AND_driver.dmamux_AND_driver.edma
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Project Template:RTE_Device
+      selected-by: NXP::Device:SDK Project Template:RTE_Device@1.0.0
       files:
         - file: RTE/Device/K32L3A60VPJ1A_cm4/RTE_Device.h
           category: header
@@ -294,14 +290,14 @@ build:
     - component: NXP::Device:SDK Utilities:assert@1.0.0
       condition: device.K32L3A60_AND_utility.debug_console
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Utilities:assert
+      selected-by: NXP::Device:SDK Utilities:assert@1.0.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/utilities/fsl_assert.c
           category: sourceC
     - component: NXP::Device:SDK Utilities:debug_console@1.0.0
       condition: device.K32L3A60_AND_component.serial_manager_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Utilities:debug_console
+      selected-by: NXP::Device:SDK Utilities:debug_console@1.0.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/utilities/debug_console/fsl_debug_console.c
           category: sourceC
@@ -310,21 +306,21 @@ build:
     - component: NXP::Device:SDK Utilities:serial_manager@1.0.0
       condition: device.K32L3A60_AND__component.serial_manager_swo_OR_component.serial_manager_uart_OR_component.serial_manager_virtual__AND_component.lists_AND_driver.common
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Utilities:serial_manager
+      selected-by: NXP::Device:SDK Utilities:serial_manager@1.0.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/components/serial_manager/fsl_component_serial_manager.c
           category: sourceC
     - component: NXP::Device:SDK Utilities:serial_manager_uart@1.0.0
       condition: device.K32L3A60_AND_component.lpuart_adapter_AND_component.serial_manager_AND_driver.lpuart
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: NXP::Device:SDK Utilities:serial_manager_uart
+      selected-by: NXP::Device:SDK Utilities:serial_manager_uart@1.0.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/components/serial_manager/fsl_component_serial_port_uart.c
           category: sourceC
     - component: NXP::Device:Startup@1.1.0
       condition: device.K32L3A60_AND__armclang_OR_iar__AND_device.K32L3A60_system
       from-pack: NXP::K32L3A60_DFP@13.0.0
-      selected-by: Device:Startup
+      selected-by: NXP::Device:Startup@1.1.0
       files:
         - file: ${CMSIS_PACK_ROOT}/NXP/K32L3A60_DFP/13.0.0/arm/startup_K32L3A60_cm4.S
           category: sourceAsm
