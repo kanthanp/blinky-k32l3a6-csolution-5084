@@ -1,0 +1,9 @@
+build-idx:
+  csolution: Blinky.csolution.yml
+  cprojects:
+    - cproject: Blinky.cproject.yml
+      clayers:
+        - clayer: Board/FRDM-K32L3A6/Board.clayer.yml
+  cbuilds:
+    - cbuild: Blinky.Debug+FRDM-K32L3A6.cbuild.yml
+    - cbuild: Blinky.Release+FRDM-K32L3A6.cbuild.yml
