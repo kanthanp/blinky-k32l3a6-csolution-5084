@@ -56,4 +56,4 @@ tmp
 out
 *.cprj
 
-RTE/*
+RTE_Components.h
