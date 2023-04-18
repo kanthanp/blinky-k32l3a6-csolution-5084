@@ -4,10 +4,10 @@ project:
   groups:
     - group: Documentation
       files:
-        - file: ./README.md
+        - file: ../README.md
     - group: Application
       files:
-        - file: ./Blinky.c
+        - file: ../Blinky.c
 
   layers:
     - layer: ./Board/FRDM-K32L3A6/Board.clayer.yml

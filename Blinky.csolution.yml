@@ -51,4 +51,4 @@ solution:
           - --entry=Reset_Handler
 
   projects:
-    - project: ./Blinky.cproject.yml
+    - project: ./TEMP/Blinky.cproject.yml
