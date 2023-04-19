@@ -10,13 +10,14 @@
 #define _RTE_DEVICE_H
 
 #include "pin_mux.h"
+#include "main.h"
 
 /* USART select, LPUART0 - LPUART3. */
 /* User needs to provide the implementation of LPUARTX_GetFreq/LPUARTX_InitPins/LPUARTX_DeinitPins for the enabled
  * LPUART instance. */
 #define RTE_USART0        0
 #define RTE_USART0_DMA_EN 0
-#define RTE_USART1        0
+#define RTE_USART1        1
 #define RTE_USART1_DMA_EN 0
 #define RTE_USART2        0
 #define RTE_USART2_DMA_EN 0
@@ -106,5 +107,8 @@
 #define RTE_I2C3_Master_DMA_CH      3
 #define RTE_I2C3_Master_DMAMUX_BASE DMAMUX1
 #define RTE_I2C3_Master_PERI_SEL    kDmaRequestMux1LPI2C3
+
+/* SPI select, LPSPI0 */
+#define RTE_SPI0        1
 
 #endif /* _RTE_DEVICE_H */

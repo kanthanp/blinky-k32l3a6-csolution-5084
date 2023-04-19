@@ -130,6 +130,7 @@ extern "C" {
  * API
  ******************************************************************************/
 
+#define SDK_I2C_BASED_COMPONENT_USED 1
 void BOARD_InitDebugConsole(void);
 #if defined(SDK_I2C_BASED_COMPONENT_USED) && SDK_I2C_BASED_COMPONENT_USED
 void BOARD_LPI2C_Init(LPI2C_Type *base, uint32_t clkSrc_Hz);

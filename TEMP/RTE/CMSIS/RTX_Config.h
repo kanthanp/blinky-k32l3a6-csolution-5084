@@ -44,7 +44,7 @@
 //   <i> Defines the combined global dynamic memory size.
 //   <i> Default: 32768
 #ifndef OS_DYNAMIC_MEM_SIZE
-#define OS_DYNAMIC_MEM_SIZE         32768
+#define OS_DYNAMIC_MEM_SIZE         24000
 #endif
  
 //   <o>Kernel Tick Frequency [Hz] <1-1000000>
@@ -131,7 +131,7 @@
 //   <i> Defines stack size for Idle thread.
 //   <i> Default: 512
 #ifndef OS_IDLE_THREAD_STACK_SIZE
-#define OS_IDLE_THREAD_STACK_SIZE   512
+#define OS_IDLE_THREAD_STACK_SIZE   256
 #endif
  
 //   <o>Idle Thread TrustZone Module Identifier
@@ -146,7 +146,7 @@
 //   <i> Enables stack overrun check at thread switch (requires RTX source variant).
 //   <i> Enabling this option increases slightly the execution time of a thread switch.
 #ifndef OS_STACK_CHECK
-#define OS_STACK_CHECK              0
+#define OS_STACK_CHECK              1
 #endif
  
 //   <q>Stack usage watermark
@@ -200,7 +200,7 @@
 //   <i> May be set to 0 when timers are not used.
 //   <i> Default: 512
 #ifndef OS_TIMER_THREAD_STACK_SIZE
-#define OS_TIMER_THREAD_STACK_SIZE  512
+#define OS_TIMER_THREAD_STACK_SIZE  256
 #endif
  
 //   <o>Timer Thread TrustZone Module Identifier
@@ -343,7 +343,7 @@
 //   <e>Global Initialization
 //   <i> Initialize Event Recorder during 'osKernelInitialize'.
 #ifndef OS_EVR_INIT
-#define OS_EVR_INIT                 0
+#define OS_EVR_INIT                 1
 #endif
  
 //     <q>Start recording
