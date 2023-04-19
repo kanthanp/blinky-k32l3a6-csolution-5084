@@ -10,7 +10,7 @@ project:
         - file: ../Blinky.c
 
   layers:
-    - layer: ./Board/FRDM-K32L3A6/Board.clayer.yml
+    - layer: ../Board/FRDM-K32L3A6/Board.clayer.yml
       for-type:
         - +FRDM-K32L3A6
 
